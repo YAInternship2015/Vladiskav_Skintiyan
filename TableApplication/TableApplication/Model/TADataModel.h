@@ -11,7 +11,7 @@
 @interface TADataModel : NSObject
 
 + (TADataModel *)defaultModel;
-
+#warning сделайте фиксированное число объектов. Вашу инициативу я оценил
 - (NSString *)getRandomObject;
 
 @end
