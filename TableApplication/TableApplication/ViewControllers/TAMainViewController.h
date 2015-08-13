@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#warning этого можно удалить
 extern const uint8_t kRowCount;
 
 @interface TAMainViewController : UITableViewController

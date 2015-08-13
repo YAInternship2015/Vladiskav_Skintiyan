@@ -15,6 +15,7 @@ const uint8_t kRowCount = 10;
 
 @interface TAMainViewController ()
 
+#warning не нужно хранить модели, храните датасорс и работайте через его интерфейсы
 @property (strong, nonatomic) NSMutableArray *model;
 
 @end
@@ -47,6 +48,7 @@ const uint8_t kRowCount = 10;
 }
 
 #pragma mark - UITableViewDelegate
+#warning В данном методе был бы смысл, если бы ячейки имели разную высоту. Если высота одинаковая, достаточно единожды сообщить о ней таблице, установив свойство rowHeight. Или из кода, или в Storyboard
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80.0;
 }
