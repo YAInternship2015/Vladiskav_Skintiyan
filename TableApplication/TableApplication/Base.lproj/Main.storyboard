@@ -45,7 +45,7 @@
                                 <connections>
                                     <outlet property="cellImageView" destination="1pB-89-fpb" id="AXj-xQ-A3l"/>
                                     <outlet property="titleLabel" destination="XhH-Oe-rwU" id="HdL-Ix-gFu"/>
-                                    <segue destination="cQD-Xf-nAL" kind="show" id="Ukp-6q-cBJ"/>
+                                    <segue destination="cQD-Xf-nAL" kind="show" identifier="details" id="Ukp-6q-cBJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="1272" y="387"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Fhy-id-Hpu">
             <objects>
-                <viewController id="cQD-Xf-nAL" sceneMemberID="viewController">
+                <viewController id="cQD-Xf-nAL" customClass="TADetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lKG-Tp-Ddq"/>
                         <viewControllerLayoutGuide type="bottom" id="zcZ-Mp-vuT"/>
@@ -71,8 +71,27 @@
                     <view key="view" contentMode="scaleToFill" id="kCX-LK-78w">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96w-FS-G4k">
+                                <rect key="frame" x="225" y="200" width="150" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="DC5-Zs-jms"/>
+                                    <constraint firstAttribute="width" constant="150" id="XPs-vH-kNb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="96w-FS-G4k" secondAttribute="centerY" id="ulB-GO-eOb"/>
+                            <constraint firstAttribute="centerX" secondItem="96w-FS-G4k" secondAttribute="centerX" id="x8h-v8-m9g"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="symbolLabel" destination="96w-FS-G4k" id="AOz-tj-I4X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARu-iK-fly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

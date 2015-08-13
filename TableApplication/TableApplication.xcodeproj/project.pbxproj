@@ -17,6 +17,8 @@
 		EE1783C01B791FCC006F2703 /* TADataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1783BF1B791FCC006F2703 /* TADataModel.m */; };
 		EE1783C21B7AA413006F2703 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1783C11B7AA413006F2703 /* Images.xcassets */; };
 		EE1783C41B7BB4FE006F2703 /* TAStringsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE1783C31B7BB4FE006F2703 /* TAStringsList.plist */; };
+		EE1783C71B7C717C006F2703 /* TADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1783C61B7C717C006F2703 /* TADetailViewController.m */; };
+		EE1783CB1B7C75F4006F2703 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1783CA1B7C75F4006F2703 /* UIColor+RandomColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		EE1783BF1B791FCC006F2703 /* TADataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADataModel.m; sourceTree = "<group>"; };
 		EE1783C11B7AA413006F2703 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EE1783C31B7BB4FE006F2703 /* TAStringsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TAStringsList.plist; sourceTree = "<group>"; };
+		EE1783C51B7C717C006F2703 /* TADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADetailViewController.h; sourceTree = "<group>"; };
+		EE1783C61B7C717C006F2703 /* TADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADetailViewController.m; sourceTree = "<group>"; };
+		EE1783C91B7C75F4006F2703 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+RandomColor.h"; path = "Utils/UIColor+RandomColor.h"; sourceTree = "<group>"; };
+		EE1783CA1B7C75F4006F2703 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+RandomColor.m"; path = "Utils/UIColor+RandomColor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 		EE1783861B791247006F2703 /* TableApplication */ = {
 			isa = PBXGroup;
 			children = (
+				EE1783C81B7C75C4006F2703 /* Utils */,
 				EE1783BD1B791FA7006F2703 /* Model */,
 				EE1783B71B7917DF006F2703 /* CustomCells */,
 				EE1783B31B7915BB006F2703 /* ViewControllers */,
@@ -142,6 +149,8 @@
 			children = (
 				EE1783B41B7915D9006F2703 /* TAMainViewController.h */,
 				EE1783B51B7915D9006F2703 /* TAMainViewController.m */,
+				EE1783C51B7C717C006F2703 /* TADetailViewController.h */,
+				EE1783C61B7C717C006F2703 /* TADetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,6 +171,15 @@
 				EE1783BF1B791FCC006F2703 /* TADataModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EE1783C81B7C75C4006F2703 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EE1783C91B7C75F4006F2703 /* UIColor+RandomColor.h */,
+				EE1783CA1B7C75F4006F2703 /* UIColor+RandomColor.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +285,9 @@
 			files = (
 				EE1783BB1B791851006F2703 /* TATableViewCell.m in Sources */,
 				EE17838D1B791247006F2703 /* AppDelegate.m in Sources */,
+				EE1783C71B7C717C006F2703 /* TADetailViewController.m in Sources */,
 				EE17838A1B791247006F2703 /* main.m in Sources */,
+				EE1783CB1B7C75F4006F2703 /* UIColor+RandomColor.m in Sources */,
 				EE1783B61B7915D9006F2703 /* TAMainViewController.m in Sources */,
 				EE1783C01B791FCC006F2703 /* TADataModel.m in Sources */,
 			);
@@ -464,6 +484,7 @@
 				EE1783A91B791247006F2703 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE1783AA1B791247006F2703 /* Build configuration list for PBXNativeTarget "TableApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +493,7 @@
 				EE1783AC1B791247006F2703 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

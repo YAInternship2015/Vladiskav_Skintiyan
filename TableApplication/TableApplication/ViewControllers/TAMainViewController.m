@@ -9,6 +9,7 @@
 #import "TAMainViewController.h"
 #import "TATableViewCell.h"
 #import "TADataModel.h"
+#import "TADetailViewController.h"
 
 const uint8_t kRowCount = 10;
 
@@ -48,6 +49,16 @@ const uint8_t kRowCount = 10;
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80.0;
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"details"]) {
+        TADetailViewController *controller = segue.destinationViewController;
+        
+        controller.symbol = [self.model objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+    }
 }
 
 @end
