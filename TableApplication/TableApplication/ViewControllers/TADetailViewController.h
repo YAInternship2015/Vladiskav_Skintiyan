@@ -10,6 +10,6 @@
 
 @interface TADetailViewController : UIViewController
 
-@property (strong, nonatomic) NSString *symbol;
+@property (nonatomic, strong) NSString *symbol;
 
 @end

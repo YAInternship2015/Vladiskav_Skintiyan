@@ -15,8 +15,7 @@ const uint8_t kRowCount = 10;
 
 @interface TAMainViewController ()
 
-#warning не нужно хранить модели, храните датасорс и работайте через его интерфейсы
-@property (strong, nonatomic) NSMutableArray *model;
+@property (nonatomic, strong) TADataModel *dataModel;
 
 @end
 
@@ -24,33 +23,23 @@ const uint8_t kRowCount = 10;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.model = [NSMutableArray array];
-    
-    for (int i = 0; i < kRowCount; ++i) {
-        [self.model addObject:[[TADataModel defaultModel] getRandomObject]];
-    }
+
+    self.dataModel = [[TADataModel alloc] init];
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.model count];
+    return kRowCount;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    cell.titleLabel.text = [self.model objectAtIndex:indexPath.row];
-    cell.cellImageView.image = [UIImage imageNamed:@"design_icon"];
-    
+    [cell setupWithImage:self.dataModel.imageData andTitle:[self.dataModel.stringData objectAtIndex:indexPath.row]];
+  
     return cell;
-}
-
-#pragma mark - UITableViewDelegate
-#warning В данном методе был бы смысл, если бы ячейки имели разную высоту. Если высота одинаковая, достаточно единожды сообщить о ней таблице, установив свойство rowHeight. Или из кода, или в Storyboard
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80.0;
 }
 
 #pragma mark - Segue
@@ -59,7 +48,7 @@ const uint8_t kRowCount = 10;
     if ([segue.identifier isEqualToString:@"details"]) {
         TADetailViewController *controller = segue.destinationViewController;
         
-        controller.symbol = [self.model objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        controller.symbol = [self.dataModel.stringData objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
     }
 }
 

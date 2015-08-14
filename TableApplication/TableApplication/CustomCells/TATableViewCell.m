@@ -8,6 +8,18 @@
 
 #import "TATableViewCell.h"
 
+@interface TATableViewCell()
+
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *cellImageView;
+
+@end
+
 @implementation TATableViewCell
+
+- (void)setupWithImage:(UIImage *)anImage andTitle:(NSString *)aTitle {
+    self.titleLabel.text = aTitle;
+    self.cellImageView.image = anImage;
+}
 
 @end
